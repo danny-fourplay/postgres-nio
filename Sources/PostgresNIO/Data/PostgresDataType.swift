@@ -192,6 +192,8 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
     public static let timestamp = PostgresDataType(1114)
     /// `1115` _timestamp
     public static let timestampArray = PostgresDataType(1115)
+    /// `1182`
+    public static let dateArray = PostgresDataType(1182)
     /// `1184`
     public static let timestamptz = PostgresDataType(1184)
     /// `1185`
@@ -485,6 +487,7 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
         case .time: return "TIME"
         case .timestamp: return "TIMESTAMP"
         case .timestampArray: return "TIMESTAMP[]"
+        case .dateArray: return "DATE[]"
         case .timestamptz: return "TIMESTAMPTZ"
         case .timestamptzArray: return "TIMESTAMPTZ[]"
         case .interval: return "INTERVAL"
@@ -613,6 +616,7 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
         case .aclitem: return .aclitemArray
         case .macaddr: return .macaddrArray
         case .inet: return .inetArray
+        case .date: return .dateArray
         case .timestamptz: return .timestamptzArray
         case .interval: return .intervalArray
         case .numeric: return .numericArray
@@ -694,6 +698,7 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
         case .aclitemArray: return .aclitem
         case .macaddrArray: return .macaddr
         case .inetArray: return .inet
+        case .dateArray: return .date
         case .timestamptzArray: return .timestamptz
         case .intervalArray: return .interval
         case .numericArray: return .numeric
