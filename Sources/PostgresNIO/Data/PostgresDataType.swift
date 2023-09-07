@@ -388,18 +388,22 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
     public static let int8multirangeArray = PostgresDataType(6157)
 
     // MARK: custom types
-    /// ``
+    /// `17456`
     public static let gender = PostgresDataType(17456)
-    /// ``
+    /// `17455`
     public static let genderArray = PostgresDataType(17455)
-    /// ``
+    /// `17498`
     public static let religion = PostgresDataType(17498)
-    /// ``
+    /// `17497`
     public static let religionArray = PostgresDataType(17497)
-    /// ``
+    /// `16421`
     public static let geometry = PostgresDataType(16421)
-    /// ``
+    /// `16429`
     public static let geometryArray = PostgresDataType(16429)
+    /// `62760`
+    public static let exploreItemType = PostgresDataType(62760)
+    /// `62759`
+    public static let exploreItemTypeArray = PostgresDataType(62759)
 
     /// The raw data type code recognized by PostgreSQL.
     public var rawValue: UInt32
@@ -682,6 +686,7 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
         case .gender: return .genderArray
         case .religion: return .religionArray
         case .geometry: return .geometryArray
+        case .exploreItemType: return .exploreItemTypeArray
         default: return nil
         }
     }
@@ -767,6 +772,7 @@ public struct PostgresDataType: RawRepresentable, Sendable, Hashable, CustomStri
         case .genderArray: return .gender
         case .religionArray: return .religion
         case .geometryArray: return .geometry
+        case .exploreItemTypeArray: return .exploreItemType
         default: return nil
         }
     }
